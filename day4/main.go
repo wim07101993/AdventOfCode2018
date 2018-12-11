@@ -81,6 +81,9 @@ func parseInput(input []string) guards {
 	return guards
 }
 
-func solvePart1(guards []guard) int {
-	return -1
+func solvePart1(guards guards) int {
+	g := guards.findSleepyGuard()
+	min := g.getSleepyMinute()
+
+	return g.id * min.Minute()
 }
